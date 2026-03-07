@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SGA — Sticker Grading Authority™</title>
+<title>Archive — SGA</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<style>
-
-</style>
 </head>
 <body>
 
@@ -40,52 +37,34 @@
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html" id="nav-home" class="active">Home</a></li>
-    <li><a href="archive.html" id="nav-archive">Archive</a></li>
+    <li><a href="index.html" id="nav-home">Home</a></li>
+    <li><a href="archive.html" id="nav-archive" class="active">Archive</a></li>
     <li><a href="machine-registry.html" id="nav-registry">Machine Registry</a></li>
     <li><a href="about.html" id="nav-about">About</a></li>
     <li><a href="submit.html" id="nav-submit">Submit</a></li>
   </ul>
 </nav>
 
-<div id="page-home" class="page active">
-  <div class="hero">
-    <div>
-      <div class="hero-eyebrow">Est. 2019</div>
-      <h1 class="hero-title">Sticker Grading<br>Authority<span>&#8482;</span></h1>
-      <div class="hero-sub">Preserving Adhesive History</div>
-      <p class="hero-desc">Documenting sticker culture and collectible media across the United States. Professional authentication, grading, and archival for the modern collector.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="window.location.href='archive.html'">Explore the Archive</button>
-        <button class="btn-secondary" onclick="window.location.href='machine-registry.html'">View the Machine Registry</button>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="glow-orb"></div>
-      <div class="graded-card">
-        <div class="card-header">
-          <div><div class="card-brand">SGA&#8482;</div><div style="font-family:'Cinzel',serif;font-size:0.42rem;color:#5a5040;letter-spacing:0.1em;">AUTHENTICATED</div></div>
-          <div class="card-grade">8</div>
-        </div>
-        <div class="card-img">
-          <div class="sp s1">&#127918;</div><div class="sp s2">&#127754;</div>
-          <div class="sp s3">&#127807;</div><div class="sp s4">&#9889;</div>
-        </div>
-        <div class="card-foot">
-          <div class="card-foot-txt">Retro Variety Pack &middot; 1987 &middot; Series III</div>
-          <div style="font-family:'Cinzel',serif;font-size:0.38rem;color:#3d3528;letter-spacing:0.08em;margin-top:3px;">NEAR MINT &middot; SGA-AR-001847</div>
-        </div>
-      </div>
+<div class="page active">
+  <div class="page-header">
+    <h2 class="page-title">SGA Archive</h2>
+    <div class="page-sub">Cataloging Collectible History</div>
+    <div class="filter-tabs">
+      <button class="filter-tab active" onclick="filterArchive(this,'all')">All</button>
+      <button class="filter-tab" onclick="filterArchive(this,'sticker')">Sticker Sets</button>
+      <button class="filter-tab" onclick="filterArchive(this,'trading')">Trading Cards</button>
+      <button class="filter-tab" onclick="filterArchive(this,'wild')">Wild Specimens</button>
     </div>
   </div>
-  <div class="stats-bar">
-    <div class="stat-item"><span class="stat-num">12,483</span><span class="stat-lbl">Items Graded</span></div>
-    <div class="stat-item"><span class="stat-num">847</span><span class="stat-lbl">Machines Logged</span></div>
-    <div class="stat-item"><span class="stat-num">49</span><span class="stat-lbl">States Covered</span></div>
-    <div class="stat-item"><span class="stat-num">2,100+</span><span class="stat-lbl">Contributors</span></div>
-  </div>
+  <div class="archive-grid" id="archive-grid"></div>
 </div>
 
 <script src="js/main.js"></script>
+<script>
+  // Initialize archive on page load
+  document.addEventListener('DOMContentLoaded', function() {
+    renderArchive('all');
+  });
+</script>
 </body>
 </html>

@@ -11,6 +11,44 @@
 </style>
 </head>
 <body>
+    <!-- Page Loader -->
+<div id="sga-loader" class="sga-loader">
+  <div class="loader-content">
+    <div class="loader-hub">
+      <svg class="loader-svg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+        <g class="web-layer" stroke="#C9A227" stroke-width="1.5" fill="none" stroke-linecap="round">
+          <line class="web-strand strand-1" x1="100" y1="100" x2="200" y2="100"/>
+          <line class="web-strand strand-2" x1="100" y1="100" x2="170.7" y2="29.3"/>
+          <line class="web-strand strand-3" x1="100" y1="100" x2="100" y2="0"/>
+          <line class="web-strand strand-4" x1="100" y1="100" x2="29.3" y2="29.3"/>
+          <line class="web-strand strand-5" x1="100" y1="100" x2="0" y2="100"/>
+          <line class="web-strand strand-6" x1="100" y1="100" x2="29.3" y2="170.7"/>
+          <line class="web-strand strand-7" x1="100" y1="100" x2="100" y2="200"/>
+          <line class="web-strand strand-8" x1="100" y1="100" x2="170.7" y2="170.7"/>
+        </g>
+        <g class="spider-layer" transform="translate(100,100)">
+          <g transform="translate(-50,-50)">
+            <circle cx="50" cy="50" r="15" fill="#C9A227" class="spider-body"/>
+            <circle cx="50" cy="35" r="10" fill="#C9A227" class="spider-head"/>
+            <circle cx="46" cy="33" r="1.5" fill="#1a1510"/>
+            <circle cx="54" cy="33" r="1.5" fill="#1a1510"/>
+            <g class="spider-legs" stroke="#C9A227" stroke-width="2" fill="none" stroke-linecap="round">
+              <path d="M50 50 Q25 25 18 28"/><path d="M50 50 Q25 50 18 52"/><path d="M50 50 Q25 75 18 72"/>
+              <path d="M50 50 Q75 25 82 28"/><path d="M50 50 Q75 50 82 52"/><path d="M50 50 Q75 75 82 72"/>
+            </g>
+          </g>
+        </g>
+      </svg>
+    </div>
+    <div class="loader-text">STICKER GRADING AUTHORITY™</div>
+    <div class="loader-progress"><div class="loader-progress-bar"></div></div>
+  </div>
+</div>
+
+<!-- Main Content (hidden until loader completes) -->
+<div id="main-content" class="main-content" style="display: none;">
+  <!-- Your existing homepage content goes here -->
+</div>
 
 <svg class="web-bg" viewBox="0 0 1400 900" preserveAspectRatio="xMidYMid slice">
   <g stroke="#C9A227" stroke-width="1.3" stroke-opacity="0.9" fill="none">
@@ -85,6 +123,40 @@
     <div class="stat-item"><span class="stat-num">2,100+</span><span class="stat-lbl">Contributors</span></div>
   </div>
 </div>
+
+<script>
+  // ========================================
+  // SGA Page Loader Controller
+  // ========================================
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const loader = document.getElementById('sga-loader');
+    const mainContent = document.getElementById('main-content');
+    
+    // Total animation duration: 3.5 seconds
+    const animationDuration = 3500;
+    
+    // Wait for animation to complete, then show content
+    setTimeout(function() {
+      // Fade out loader
+      loader.classList.add('fade-out');
+      
+      // Show main content
+      mainContent.style.display = 'block';
+      
+      // Trigger content fade in
+      setTimeout(function() {
+        mainContent.classList.add('visible');
+      }, 50);
+      
+      // Remove loader from DOM after fade out
+      setTimeout(function() {
+        loader.style.display = 'none';
+      }, 500);
+      
+    }, animationDuration);
+  });
+</script>
 
 <script src="js/main.js"></script>
 </body>

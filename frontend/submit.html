@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SGA — Sticker Grading Authority™</title>
+<title>Submit — SGA</title>
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Cinzel+Decorative:wght@400;700&family=EB+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
-<style>
-
-</style>
 </head>
 <body>
 
@@ -40,49 +37,47 @@
     </div>
   </div>
   <ul class="nav-links">
-    <li><a href="index.html" id="nav-home" class="active">Home</a></li>
-    <li><a href="archive.html" id="nav-archive">Archive</a></li>
-    <li><a href="machine-registry.html" id="nav-registry">Machine Registry</a></li>
-    <li><a href="about.html" id="nav-about">About</a></li>
-    <li><a href="submit.html" id="nav-submit">Submit</a></li>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="archive.html">Archive</a></li>
+    <li><a href="machine-registry.html">Machine Registry</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="submit.html" class="active">Submit</a></li>
   </ul>
 </nav>
 
-<div id="page-home" class="page active">
-  <div class="hero">
-    <div>
-      <div class="hero-eyebrow">Est. 2019</div>
-      <h1 class="hero-title">Sticker Grading<br>Authority<span>&#8482;</span></h1>
-      <div class="hero-sub">Preserving Adhesive History</div>
-      <p class="hero-desc">Documenting sticker culture and collectible media across the United States. Professional authentication, grading, and archival for the modern collector.</p>
-      <div class="hero-btns">
-        <button class="btn-primary" onclick="window.location.href='archive.html'">Explore the Archive</button>
-        <button class="btn-secondary" onclick="window.location.href='machine-registry.html'">View the Machine Registry</button>
-      </div>
-    </div>
-    <div class="hero-visual">
-      <div class="glow-orb"></div>
-      <div class="graded-card">
-        <div class="card-header">
-          <div><div class="card-brand">SGA&#8482;</div><div style="font-family:'Cinzel',serif;font-size:0.42rem;color:#5a5040;letter-spacing:0.1em;">AUTHENTICATED</div></div>
-          <div class="card-grade">8</div>
-        </div>
-        <div class="card-img">
-          <div class="sp s1">&#127918;</div><div class="sp s2">&#127754;</div>
-          <div class="sp s3">&#127807;</div><div class="sp s4">&#9889;</div>
-        </div>
-        <div class="card-foot">
-          <div class="card-foot-txt">Retro Variety Pack &middot; 1987 &middot; Series III</div>
-          <div style="font-family:'Cinzel',serif;font-size:0.38rem;color:#3d3528;letter-spacing:0.08em;margin-top:3px;">NEAR MINT &middot; SGA-AR-001847</div>
-        </div>
-      </div>
-    </div>
+<div class="page active">
+  <div class="page-header">
+    <h2 class="page-title">Submit an Entry</h2>
+    <div class="page-sub">Contribute to the Archive</div>
   </div>
-  <div class="stats-bar">
-    <div class="stat-item"><span class="stat-num">12,483</span><span class="stat-lbl">Items Graded</span></div>
-    <div class="stat-item"><span class="stat-num">847</span><span class="stat-lbl">Machines Logged</span></div>
-    <div class="stat-item"><span class="stat-num">49</span><span class="stat-lbl">States Covered</span></div>
-    <div class="stat-item"><span class="stat-num">2,100+</span><span class="stat-lbl">Contributors</span></div>
+  <div class="submit-container">
+    <div class="form-row">
+      <div class="form-group"><label class="form-lbl">Your Name</label><input type="text" class="form-input" placeholder="Full name"></div>
+      <div class="form-group"><label class="form-lbl">Email Address</label><input type="email" class="form-input" placeholder="your@email.com"></div>
+    </div>
+    <div class="form-group">
+      <label class="form-lbl">Entry Type</label>
+      <select class="form-select form-input">
+        <option value="">Select type...</option>
+        <option>Sticker Set</option><option>Trading Card Pack</option>
+        <option>Wild Specimen</option><option>Vending Machine</option><option>Rare / Miscellaneous</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-lbl">Description</label><textarea class="form-input form-textarea" placeholder="Describe the item, condition, date, notable characteristics..."></textarea></div>
+    <div class="form-row">
+      <div class="form-group"><label class="form-lbl">Location (City, State)</label><input type="text" class="form-input" placeholder="e.g. Tullytown, PA"></div>
+      <div class="form-group"><label class="form-lbl">Date Found / Acquired</label><input type="date" class="form-input"></div>
+    </div>
+    <div class="form-group">
+      <label class="form-lbl">Upload Image (Optional)</label>
+      <div class="upload-area" onclick="document.getElementById('file-input').click()">
+        <div class="upload-icon">&#128206;</div>
+        <div class="upload-txt">Click to choose file or drag and drop</div>
+        <div style="font-size:0.8rem;color:#3d3528;margin-top:4px;">JPG, PNG, WEBP up to 10MB</div>
+      </div>
+      <input type="file" id="file-input" style="display:none" accept="image/*">
+    </div>
+    <button class="submit-btn">Submit Entry to Archive</button>
   </div>
 </div>
 
